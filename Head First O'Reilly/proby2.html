@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProbyJS 2 (Object)</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <li id="li1">123</li>
+    <li id="li2" class="red">456</li>
+    <li id="li3">789</li>
+
+
+    <script>
+        var model = {
+            size: 3,
+            name: "test",
+
+            sayName: function(name) {
+                var hello = "Hello ";
+                var defHello = "Hello " + this.name;
+
+                console.log(hello + name);
+                console.log(defHello);
+            }
+        };
+
+        model.sayName("World!")
+
+    </script>
+
+</body>
+</html>

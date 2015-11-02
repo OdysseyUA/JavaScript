@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Image Guess </title>
+    <style>
+        body { margin: 20px; }
+        image { margin: 20px; }
+    </style>
+    <script>
+
+        function init() {
+//            document.getElementById("zero").onclick = showAnswer;
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i++) {
+                images[i].onclick = showAnswer;
+            }
+        }
+
+        window.onload = init;
+
+        function showAnswer(eventObj) {
+//            document.getElementById("zero")
+//                    .setAttribute("src", "img/zero.jpg");
+
+//            var image = document.getElementById("zero");
+//            image.src = "img/zero.jpg";
+
+            console.log(eventObj.target);
+
+            var image = eventObj.target;
+            var name = image.id;
+            name = "img/" + name + ".jpg";
+            image.src = name;
+
+//            setTimeout(function(){
+//                var blurename = image.id;
+//                blurename = "img/" + blurename + "blur" + ".jpg";
+//                image.src = blurename;
+//            },2000);
+
+            setTimeout(reblur, 2000, image);
+
+            function reblur(image) {
+                var name = image.id;
+                name = "img/" + name + "blur.jpg";
+                image.src = name;
+            }
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <img id="zero" src="img/zeroblur.jpg"/>
+    <img id="one" src="img/oneblur.jpg"/>
+    <img id="two" src="img/twoblur.jpg"/>
+    <img id="three" src="img/threeblur.jpg"/>
+    <img id="four" src="img/fourblur.jpg"/>
+    <img id="five" src="img/fiveblur.jpg"/>
+
+</body>
+</html>
