@@ -33,19 +33,26 @@
             name = "img/" + name + ".jpg";
             image.src = name;
 
-//            setTimeout(function(){
-//                var blurename = image.id;
-//                blurename = "img/" + blurename + "blur" + ".jpg";
-//                image.src = blurename;
-//            },2000);
 
-            setTimeout(reblur, 2000, image);
+            //  commented by new knowledge (binding, see p.521)
+            //  setTimeout(reblur, 2000, image);
 
-            function reblur(image) {
-                var name = image.id;
-                name = "img/" + name + "blur.jpg";
-                image.src = name;
-            }
+
+            setTimeout(
+                    function() {
+                        var blurename = image.id;
+                        blurename = "img/" + blurename + "blur" + ".jpg";
+                        image.src = blurename;
+                    },
+                    2000);
+
+
+            //  commented by new knowledge (binding, see p.521)
+            //  function reblur(image) {
+            //      var name = image.id;
+            //      name = "img/" + name + "blur.jpg";
+            //      image.src = name;
+            //  }
         }
 
 

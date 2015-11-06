@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click me!</title>
+    <style>
+        body, button {
+            margin: 10px;
+        }
+
+        div {
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+
+        /*        window.onload = init;
+
+         function updateMessage() {
+
+         var count = 0;
+
+         return function () {
+         count++;
+         var element = document.getElementById("message");
+         element.innerHTML = "You clicked me " + count + " times.";
+         }
+         }
+
+         function init() {
+         //            var um = updateMessage();
+         document.getElementById("clickme").onclick = updateMessage();
+         }*/
+
+
+        window.onload = function() {
+
+            var count = 0;
+            var div = document.getElementById("message");
+            var button = document.getElementById("clickme");
+
+            button.onclick = function() {
+                count++;
+                div.innerHTML = "You clicked me " + count + " times.";
+            }
+        };
+
+    </script>
+
+</head>
+<body>
+<button id="clickme">Click me!</button>
+<div id="message"></div>
+</body>
+</html>
