@@ -73,7 +73,14 @@ var cadiParams = {
     color: "tan",
     passengers: 5,
     convertible: false,
-    mileage: 12892
+    mileage: 12892,
+
+    drive: function() {
+        alert("Zoom zoom");
+    },
+    stop: function() {
+        alert("Stop!");
+    }
 };
 
 function Car(params) {
@@ -149,3 +156,27 @@ oddNumbers.reverse();
 
 console.log(oddNumbers[0]);
 console.log(oddNumbers[3]);
+
+//cadiParams.drive();
+//cadiParams.stop();
+//
+//cadiParams.newFunction = function() {
+//    alert("test");
+//};
+//cadiParams.newFunction();
+
+/*
+cadiParams.test = "test";
+alert(cadiParams.test);
+
+delete cadiParams.test;
+alert(cadiParams.test);
+*/
+
+
+cadiParams.isStarted = function() {
+    if (this.year == 1955) {
+        alert("Started!");
+    }
+};
+cadiParams.isStarted();
